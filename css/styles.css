@@ -4,7 +4,7 @@
   --title-color: #2e2f42;
   --text-color: #434455;
   --hero-title-color: #fff;
-  --hero-btn-color: #fff;
+  --btn-color: #fff;
   --dark-background: #2e2f42;
   --team-background: #f4f4fd;
   --text-lh: 1.5;
@@ -178,7 +178,7 @@ ul {
   margin: 0 auto;
   margin-bottom: 48px;
 }
-.hero-btn {
+.btn {
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -186,20 +186,19 @@ ul {
   display: flex;
   align-items: center;
   letter-spacing: 0.04em;
-  color: var(--hero-btn-color);
+  color: var(--btn-color);
   cursor: pointer;
   background: var(--logo-web-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   padding: 16px 32px;
-  display: block;
   margin: auto;
   border: none;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-btn:hover,
-.hero-btn:focus {
+.btn:hover,
+.btn:focus {
   background-color: #404bbf;
 }
 
@@ -564,14 +563,23 @@ img {
   position: relative;
 }
 .modal-close {
-  display: block;
+  display: flex;
+  position: absolute;
+  top: 24px;
+  right: 24px;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  display: block;
   margin-left: auto;
   background-color: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close:hover {
+  background: var(--active-color);
+  fill: #fff;
 }
 .is-hidden {
   opacity: 0;
@@ -580,4 +588,92 @@ img {
 }
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0);
+}
+.modal-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: var(--text-lh);
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+  padding-top: 72px;
+  margin-bottom: 16px;
+}
+.form-input {
+  width: 360px;
+  height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  padding-left: 40px;
+  outline: transparent;
+}
+.form-control {
+  position: relative;
+}
+.form-icon {
+  position: absolute;
+  left: 19px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.form-group {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  margin-bottom: 8px;
+}
+.form-group:nth-child(4) {
+  margin-bottom: 16px;
+}
+.form-group:nth-child(5) {
+  margin-bottom: 24px;
+}
+.form-input:focus {
+  border-color: var(--logo-web-color);
+}
+.form-input:focus + .form-icon {
+  fill: var(--logo-web-color);
+}
+.form-textarea {
+  width: 360px;
+  min-height: 120px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  outline: transparent;
+  padding-top: 8px;
+  padding-left: 16px;
+  resize: vertical;
+}
+.form-textarea:focus {
+  border-color: var(--logo-web-color);
+}
+.privacy-link {
+  margin: 4px;
+}
+.form-label-checkbox {
+  display: flex;
+  align-items: center;
+}
+.form-label-checkbox span {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  border: 1px solid #8e8f99;
+  border-radius: 2px;
+  margin-right: 8px;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-checkbox:checked + .form-label-checkbox span {
+  fill: var(--team-background);
+  background-color: var(--active-color);
+  border-color: var(--active-color);
 }
